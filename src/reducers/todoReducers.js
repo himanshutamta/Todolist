@@ -1,5 +1,8 @@
 const initialState = {
-    list: []
+    list: [
+        {id:1, data:"first"},
+        {id:2, data:"second"}
+    ]
 }
 
 const todoReducers = (state= initialState, action) => {
@@ -21,10 +24,40 @@ const todoReducers = (state= initialState, action) => {
             }
 
 
-            // case "EDIT_TODO":
-            //     const editOne = state.list.find((element) =>  element.id === action.id );
-            //     console.log(editOne);
-            //     return{ list: id}
+            case "EDIT_TODO":
+                const newtest = [...state.list]
+
+                let list = newtest.map(event => {
+                    if (event.id === action.payload.id){
+                        event.data = action.payload.data;
+                        return event;
+                    }
+                    return event;
+                })
+                return {...state, list}
+
+                case "CHECKED":
+                    const forCheck = [...state.list].map(event => {
+                        console.log(event.id,action.payload)
+                        if (event.id === action.payload){
+                            event.checked = !event.checked ;
+                            return event;
+                        }
+                        return event;
+                    })
+                    return {...state, list: forCheck}
+ 
+
+
+                case "DELETE_ALL":
+                    const forChecke = [...state.list].filter((event) => {
+                      return event.checked !== true;
+                    })
+                    return{
+                        ...state,
+                        list: forChecke
+                    }
+
 
         default: return state;
        

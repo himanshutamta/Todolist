@@ -2,7 +2,8 @@
     display: flex;
     flex-direction: column;
     text-align: center;
-    height: 40vh;
+    height: auto;
+    margin-bottom: 70px;
     width: 40%;
     background-color: white;
     margin-top: 19vh;
@@ -17,7 +18,6 @@
 }
 
 .addtodo input{
-    /* display: flex; */
     width: 45vh;
     padding: 10px;
     font-size: 20px;
@@ -43,14 +43,16 @@
 }
 
 .eachItem{
-    margin-top: 10px;
-    width: 67%;
+    margin-top: 12px;
+    width: 60%;
     background-color: rgb(202, 223, 223);
     justify-content: space-between;
     text-align: start;
     height: 50px;
     display: flex;
-    align-items: baseline;
+    align-items: center;
+    margin-left: 135px;
+
 }
 
 .eachItem h3{
@@ -75,4 +77,26 @@
     margin-right: 10px;
     font-size: 15px;
     color: rgb(59, 121, 121);
+}
+
+
+.Count{
+   display: flex;
+   justify-content: center;
+   margin-top: 10px;
+}
+
+.lengthCount{
+    font-size: 20px;
+    margin-right: 40px;
+    color: rgba(0, 0, 0, 0.651);
+
+}
+
+.Count button{
+    border: none;
+    background-color: white;
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.671);
+
 }
